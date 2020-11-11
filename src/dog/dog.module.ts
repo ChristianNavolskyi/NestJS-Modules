@@ -1,11 +1,9 @@
 import { Module } from "@nestjs/common"
 import { DogController } from "./dog.controller"
-import { AccessModule } from "../access/access.module"
-import { AccessGuard } from "../access/access.guard"
+import { MongoModule } from "../mongo/mongo.module"
 
 @Module({
-  imports: [AccessModule],
-  providers: [AccessGuard],
+  imports: [MongoModule],
   controllers: [DogController],
 })
 export class DogModule {}
